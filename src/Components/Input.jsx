@@ -1,12 +1,11 @@
 import { FaArrowUp } from "react-icons/fa";
-const Input = ({ input, display, handleOnchange }) => {
+const Input = ({ inputs, display, handleOnchange, handleSubmission }) => {
   return (
-    <form>
+    <form onSubmit={handleSubmission}>
       <textarea
         name="text"
-        id="text"
-        value={input}
         onChange={handleOnchange}
+        value={inputs}
         placeholder="Send a message"
       ></textarea>
       <button className="send">

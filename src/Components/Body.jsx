@@ -1,5 +1,5 @@
 import Chat from "./Chats";
-const Body = ({ input, display, handleOnchange }) => {
+const Body = ({ inputs, display, handleOnchange }) => {
   return (
     <div className="body-image-mother">
       <div className="body-image">
@@ -17,7 +17,7 @@ const Body = ({ input, display, handleOnchange }) => {
           <div className="real-question">Tell me a motivational quote.</div>
         </div>
       </div>
-      {/* <Chat /> */}
+      <Chat inputs={inputs} />
     </div>
   );
 };
