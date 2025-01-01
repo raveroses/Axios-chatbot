@@ -37,6 +37,9 @@ html {
   width: 40px;
   border-radius: 50%;
 }
+.body-image-mother {
+  margin: 90px 0px;
+}
 .body-image {
   display: flex;
   justify-content: center;
@@ -45,7 +48,7 @@ html {
   align-content: center;
   width: 100%;
   height: 100%;
-  padding: 190px 0px 0px 0px;
+  padding: 94px 0px 0px 0px;
 }
 .body-image img {
   width: 100px;
@@ -94,6 +97,8 @@ form {
   background-color: rgb(30, 35, 37);
   padding: 10px 17px;
   width: 95%;
+  position: fixed;
+  bottom: 20px;
 }
 form textarea {
   padding: 0px 0px 0px 10px;
@@ -111,6 +116,7 @@ form textarea::placeholder {
   font-size: 13px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .send {
   color: white;
   font-size: 20px;
@@ -118,8 +124,69 @@ form textarea::placeholder {
   border-radius: 50%;
   background-color: gray;
   padding: 6px 10px;
+  border: none;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.AI-chat {
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: auto;
+  max-width: 70%;
+}
+.user-text {
+  color: white;
+  position: absolute;
+  right: 50px;
+  background-color: rgb(24, 29, 34);
+  padding: 18px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: auto;
+  max-width: 70%;
+}
+.loading {
+  margin-top: 120px;
+  width: 3.125rem;
+  aspect-ratio: 2;
+  --_g: no-repeat
+    radial-gradient(circle closest-side, rgb(180, 180, 180) 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  position: absolute;
+  left: 50px;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
 @media (max-width: 700px) {
+  .mother {
+    margin: 13px 20px;
+  }
   .image img {
     width: 38px;
   }
@@ -134,26 +201,60 @@ form textarea::placeholder {
   .body-image {
     width: 100%;
     height: 100%;
-    padding: 22px 0px 0px 0px;
+    padding: 97px 0px 0px 0px;
     max-width: 100%;
     position: fixed;
     right: 0;
     left: 0;
+    justify-content: flex-start;
   }
   .logo-name h3 {
     font-size: 20px;
   }
-  .mother {
-    margin: 30px 30px 0px 30x;
+
+  .real-question {
+    font-size: 15px;
+    padding: 10px 20px;
   }
   .question {
-    margin: 250px 20px 0px 20px;
+    margin: 0px 20px 0px 20px;
     max-width: 100%;
     gap: 11px;
+    position: absolute;
+    bottom: 200px;
   }
   form {
-    margin: 0;
+    margin: auto;
     bottom: 5px;
+    left: 0;
+    right: 0;
     position: fixed;
+  }
+  .body-image-mother {
+    margin: 0px 0px;
+    padding: 84px 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .AI-chat {
+    gap: 10px;
+    left: 20px;
+    width: auto;
+    max-width: 70%;
+  }
+  .AI-text p {
+    font-size: 15px;
+  }
+  .user-text {
+    padding: 12px 15px;
+    right: 20px;
+    width: auto;
+  }
+  .user-chat p {
+    font-size: 15px;
+  }
+  .loading {
+    margin-top: 122px;
   }
 }
