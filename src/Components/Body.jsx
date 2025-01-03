@@ -1,24 +1,32 @@
 import Chat from "./Chats";
-const Body = ({ inputs, display, handleOnchange }) => {
+import Question from "./Question";
+const Body = ({ inputs, display, previousChat }) => {
+  const questions = Question.map((question, index) => {
+    return (
+      <>
+        <div className="real-question" key={{ index }}>
+          {question.question}
+        </div>
+      </>
+    );
+  });
   return (
-    <div className="body-image-mother">
-      <div className="body-image">
-        <img src="/images/axionis.jpg" alt="axionis - image" />
-        <h3>What can I help with?</h3>
-        <div className="question">
-          <div className="real-question">
-            What’s the most popular programming language?
+    <>
+      {" "}
+      <div className="body-image-mother">
+        <div
+          className="body-image"
+          style={{ display: display ? "none" : "block" }}
+        >
+          <div className="center">
+            <img src="/images/axionis.jpg" alt="axionis - image" />
+            <h3>What can I help with?</h3>
           </div>
-          <div className="real-question">What’s the meaning of life?</div>
-          <div className="real-question">
-            What are some exercises for beginners?
-          </div>
-          <div className="real-question">Can you explain photosynthesis?</div>
-          <div className="real-question">Tell me a motivational quote.</div>
+          <div className="question">{questions}</div>
         </div>
       </div>
-      <Chat inputs={inputs} />
-    </div>
+      <Chat inputs={inputs} display={display} previousChat={previousChat} />
+    </>
   );
 };
 

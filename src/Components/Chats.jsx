@@ -1,29 +1,36 @@
-const Chat = ({ inputs }) => {
-  return (
-    <div className="chatmother" style={{ display: "none" }}>
-      <ul>
-        <li className="user-text">
-          <p>{inputs}</p>
-        </li>
+const Chat = ({ display, previousChat }) => {
+  const chats = [...previousChat];
+  console.log(chats);
+  const map = chats.map((chat, index) => {
+    return (
+      <div
+        className="chatmother"
+        style={{
+          visibility: display ? "visible" : "hidden",
+        }}
+        key={index}
+      >
+        <div className="user-text">
+          <p>{chat.user}</p>
+        </div>
 
-        <li className="AI-chat">
-          <div className="loading"></div>
+        <div className="ai-chat">
+          {/* <div className="loading"></div> */}
           <div className="image">
             <img src="/images/axionis.jpg" alt="axionis" />
           </div>
           <div className="AI-text">
             <p>
-              .loader width: 3.125rem; aspect-ratio: 2; --_g: no-repeat
-              radial-gradient(circle closest-side, rgb(180, 180, 180) 90%,
-              #0000); background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g)
-              100% 50%; background-size: calc(100% / 3) 50%; animation: l3 1s
-              infinite linear;
+              My regards to your mom or lemme talk to her if you get there. Make
+              I do proper introduction
             </p>
           </div>
-        </li>
-      </ul>
-    </div>
-  );
+        </div>
+      </div>
+    );
+  });
+
+  return <>{map}</>;
 };
 
 export default Chat;
