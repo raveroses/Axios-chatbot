@@ -20,10 +20,7 @@ const Chat = ({ display, previousChat }) => {
             <img src="/images/axionis.jpg" alt="axionis" />
           </div>
           <div className="AI-text">
-            <p>
-              My regards to your mom or lemme talk to her if you get there. Make
-              I do proper introduction
-            </p>
+            <p>{chat.AI}</p>
           </div>
         </div>
       </div>
