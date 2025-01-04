@@ -14,17 +14,14 @@ const Body = ({
 }) => {
   const questions = Question.map((question, index) => {
     return (
-      <>
-        <div className="real-question" key={{ index }}>
-          {question.question}
-        </div>
-      </>
+      <div className="real-question" key={index}>
+        {question.question}
+      </div>
     );
   });
 
   return (
     <>
-      {" "}
       <div className="body-image-mother">
         <div
           className="body-image"

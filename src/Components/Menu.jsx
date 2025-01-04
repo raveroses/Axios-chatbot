@@ -1,14 +1,15 @@
 import { IoMdContact } from "react-icons/io";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { FaPenToSquare } from "react-icons/fa6";
-const Menu = ({ handleShow, handleShow2 }) => {
+import { icon } from "leaflet";
+const Menu = ({ handleShow, handleShow2, iconshow }) => {
   return (
-    <div className="menu">
-      <div onClick={handleShow}>
+    <div className="menus" style={{ display: iconshow ? "block" : "none" }}>
+      <div className="mehn" onClick={handleShow}>
         <IoMdContact className="iccon" />
         Developer
       </div>
-      <div onClick={handleShow2}>
+      <div className="mehn" onClick={handleShow2}>
         <IoInformationCircleOutline className="iccon" />
         View details
       </div>

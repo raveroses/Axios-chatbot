@@ -2,12 +2,9 @@ import { FaTimesCircle } from "react-icons/fa";
 const ViewDetail = ({ show2, handleShow2 }) => {
   return (
     <>
-      <div
-        className="developer dels"
-        style={{ display: show2 ? "block" : "none" }}
-      >
-        <div className="cancel" onClick={handleShow2}>
-          <FaTimesCircle />
+      <div className="developer" style={{ display: show2 ? "block" : "none" }}>
+        <div className="cancel">
+          <FaTimesCircle onClick={handleShow2} />
         </div>
         <div className="developer-images">
           <img src="images/axionis.jpg" alt="logo-image" />

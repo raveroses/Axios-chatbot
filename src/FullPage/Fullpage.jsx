@@ -67,14 +67,17 @@ const Fullpage = () => {
   console.log(previousChat);
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
-  const handleShow = () => {
+  const handleShow = (e) => {
+    e.preventDefault();
     setShow((prev) => !prev);
   };
-  const handleShow2 = () => {
+  const handleShow2 = (e) => {
+    e.preventDefault();
     setShow2((prev) => !prev);
     console.log("you clicked viewDetail");
   };
   console.log(show2);
+  console.log(show);
 
   return (
     <div className="mother">

@@ -38,14 +38,14 @@ html {
   border-radius: 50%;
 }
 .body-image-mother {
-  margin: 90px 0px;
+  margin: 0px 0px;
 }
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .center img {
@@ -203,27 +203,29 @@ form textarea::placeholder {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
 }
-
-.menu {
+.heads {
+  display: flex;
+  flex-direction: column;
+}
+.menus {
   color: white;
   display: flex;
+  text-align: center;
   align-self: flex-end;
-  align-items: center;
-  justify-content: flex-end;
-  position: absolute;
-  right: 50px;
   flex-direction: column;
   background-color: rgb(24, 29, 34);
   width: 170px;
   padding: 20px 5px;
   border-radius: 15px;
 }
-.menu div {
+.menus .mehn {
   font-size: 16px;
   font-weight: 500;
   padding: 10px 10px;
+  cursor: pointer;
+  margin-bottom: 6px;
 }
-.menu div:hover {
+.menus .mehn:hover {
   background-color: black;
   border-radius: 20px;
 }
@@ -241,7 +243,7 @@ form textarea::placeholder {
   top: 50px;
   left: 0px;
   height: 100%;
-  z-index: 9;
+  /* z-index: 9; */
   max-width: 100%;
   text-align: center;
   margin: 0px 50px;
@@ -326,9 +328,7 @@ form textarea::placeholder {
   text-align: left;
   color: white;
 }
-.menu div {
-  cursor: pointer;
-}
+
 @media (max-width: 700px) {
   .mother {
     margin: 13px 20px;
@@ -347,12 +347,12 @@ form textarea::placeholder {
   .body-image {
     width: 100%;
     height: 100%;
-    /* padding: 97px 0px 0px 0px; */
     padding: 0px 0px 0px 0px;
     max-width: 100%;
     position: fixed;
     right: 0;
     left: 0;
+    align-content: flex-start;
     justify-content: flex-start;
   }
   .logo-name h3 {
@@ -364,11 +364,12 @@ form textarea::placeholder {
     padding: 10px 20px;
   }
   .question {
-    margin: 0px 20px 0px 20px;
+    margin: 100px 20px 0px 20px;
     max-width: 100%;
     gap: 11px;
-    position: absolute;
-    bottom: 200px;
+    position: static;
+    bottom: 0;
+    justify-content: flex-end;
   }
   form {
     margin: auto;
@@ -385,7 +386,7 @@ form textarea::placeholder {
   } */
   .body-image-mother {
     margin: 0px 0px;
-    padding: 30px 0px;
+    padding: 0px 0px;
     width: 100%;
     max-width: 100%;
   }
@@ -410,18 +411,17 @@ form textarea::placeholder {
     margin-top: 122px;
   }
   .center {
-    margin-top: 150px;
-    padding-top: 0px;
+    margin-top: 0px;
+    padding-top: 50px;
   }
   .chatmother .ai-chat {
     padding-top: 30px;
     padding-bottom: 20px;
   }
-  .menu {
-    right: 23px;
-    top: 60px;
+  .menus {
     width: 150px;
     gap: 0px;
+    margin-top: 50px;
   }
   .developer {
     width: 93%;
