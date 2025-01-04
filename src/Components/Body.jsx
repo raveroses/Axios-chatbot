@@ -1,6 +1,17 @@
 import Chat from "./Chats";
 import Question from "./Question";
-const Body = ({ inputs, display, previousChat }) => {
+import Developer from "./Developer";
+import ViewDetail from "./ViewDetail";
+
+const Body = ({
+  inputs,
+  display,
+  previousChat,
+  show,
+  handleShow,
+  handleShow2,
+  show2,
+}) => {
   const questions = Question.map((question, index) => {
     return (
       <>
@@ -10,6 +21,7 @@ const Body = ({ inputs, display, previousChat }) => {
       </>
     );
   });
+
   return (
     <>
       {" "}
@@ -26,6 +38,8 @@ const Body = ({ inputs, display, previousChat }) => {
         </div>
       </div>
       <Chat inputs={inputs} display={display} previousChat={previousChat} />
+      <Developer handleShow={handleShow} show={show} />
+      <ViewDetail handleShow2={handleShow2} show2={show2} />
     </>
   );
 };

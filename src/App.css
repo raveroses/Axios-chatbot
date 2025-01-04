@@ -204,6 +204,131 @@ form textarea::placeholder {
   }
 }
 
+.menu {
+  color: white;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 50px;
+  flex-direction: column;
+  background-color: rgb(24, 29, 34);
+  width: 170px;
+  padding: 20px 5px;
+  border-radius: 15px;
+}
+.menu div {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 10px;
+}
+.menu div:hover {
+  background-color: black;
+  border-radius: 20px;
+}
+.iccon {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.developer {
+  width: 95%;
+  color: white;
+  background-color: rgb(20, 21, 23);
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  height: 100%;
+  z-index: 9;
+  max-width: 100%;
+  text-align: center;
+  margin: 0px 50px;
+  padding: 30px 10px;
+}
+
+.developer-image {
+  padding-top: 40px;
+}
+.developer-images {
+  padding-top: 100px;
+}
+.model {
+  padding: 100px 20px;
+}
+.model p {
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.model ul {
+  margin: 0;
+  padding: 0;
+}
+
+.model ul li {
+  font-size: 16px;
+  padding-bottom: 3px;
+}
+.app-name h3 {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 6px;
+}
+.app-name p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.developer-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.developer-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.cancel {
+  font-size: 25px;
+  text-align: right;
+  padding-right: 50px;
+  cursor: pointer;
+}
+.developer-name h3 {
+  font-size: 23px;
+  padding-bottom: 20px;
+}
+.contents p {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+.links {
+  text-align: center;
+  font-size: 18px;
+  /* margin-left: 50px; */
+  max-width: 100%;
+}
+.links p {
+  margin-top: 10px;
+}
+.links p a {
+  color: blue;
+}
+
+.model {
+  text-align: left;
+  color: white;
+}
+.menu div {
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   .mother {
     margin: 13px 20px;
@@ -291,5 +416,38 @@ form textarea::placeholder {
   .chatmother .ai-chat {
     padding-top: 30px;
     padding-bottom: 20px;
+  }
+  .menu {
+    right: 23px;
+    top: 60px;
+    width: 150px;
+    gap: 0px;
+  }
+  .developer {
+    width: 93%;
+    top: 50px;
+    left: 0px;
+    max-width: 100%;
+    margin: 0px 18px;
+    padding: 30px 30px;
+  }
+  .cancel {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+  .developer-images img {
+    max-width: 100%;
+  }
+  .developer-image img {
+    max-width: 100%;
+  }
+  .developer-name h3 {
+    font-size: 20px;
+  }
+  .contents p {
+    font-size: 15px;
+  }
+  .links {
+    font-size: 16px;
   }
 }
