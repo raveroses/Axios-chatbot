@@ -13,6 +13,8 @@ const Body = ({
   show2,
   question,
   handleQuestion,
+  loading,
+  error,
 }) => {
   const questions = Question.map((question, index) => {
     return (
@@ -47,6 +49,8 @@ const Body = ({
         display={display}
         previousChat={previousChat}
         question={question}
+        loading={loading}
+        error={error}
       />
       <Developer handleShow={handleShow} show={show} />
       <ViewDetail handleShow2={handleShow2} show2={show2} />

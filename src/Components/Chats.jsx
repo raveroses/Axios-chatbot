@@ -1,8 +1,9 @@
-const Chat = ({ display, previousChat }) => {
+import Markdown from "react-markdown";
+const Chat = ({ display, previousChat, loading, error }) => {
   const chats = [...previousChat];
   console.log(chats?.AI);
   console.log(chats);
-  const map = chats.map((chat, index) => {
+  const markdown = chats.map((chat, index) => {
     return (
       <div
         className="chatmother"
@@ -16,19 +17,26 @@ const Chat = ({ display, previousChat }) => {
         </div>
 
         <div className="ai-chat">
-          {/* <div className="loading"></div> */}
           <div className="image">
             <img src="/images/axionis.jpg" alt="axionis" />
           </div>
           <div className="AI-text">
-            <p>{chat?.AI}</p>
+            <div>
+              {" "}
+              <div
+                className="loading"
+                style={{ display: loading ? "block" : "none" }}
+              ></div>
+              <span> {chat?.AI}</span>
+              <p>{error}</p>
+            </div>
           </div>
         </div>
       </div>
     );
   });
 
-  return <>{map}</>;
+  return <>{markdown}</>;
 };
 
 export default Chat;

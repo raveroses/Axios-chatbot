@@ -84,6 +84,7 @@ html {
   background-color: rgb(24, 29, 34);
   padding: 12px 20px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 form {
@@ -145,13 +146,13 @@ form textarea::placeholder {
 .chatmother .ai-chat {
   color: white;
   display: flex;
-  gap: 0;
+  gap: 10px;
   align-items: center;
   align-self: flex-start;
   justify-content: flex-start;
   width: auto;
   max-width: 70%;
-  /* padding-top: 20px; */
+  padding-top: 20px;
 }
 .chatmother .user-text {
   color: white;
@@ -177,15 +178,12 @@ form textarea::placeholder {
   color: white;
 } */
 .loading {
-  margin-top: 120px;
   width: 3.125rem;
   aspect-ratio: 2;
   --_g: no-repeat
     radial-gradient(circle closest-side, rgb(180, 180, 180) 90%, #0000);
   background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
   background-size: calc(100% / 3) 50%;
-  position: absolute;
-  left: 50px;
   animation: l3 1s infinite linear;
 }
 
@@ -329,7 +327,12 @@ form textarea::placeholder {
   text-align: left;
   color: white;
 }
-
+.AI-text div {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 @media (max-width: 700px) {
   .mother {
     margin: 13px 20px;
@@ -397,7 +400,7 @@ form textarea::placeholder {
     width: auto;
     max-width: 70%;
   }
-  .AI-text p {
+  .AI-text div {
     font-size: 15px;
   }
   .user-text {
@@ -408,9 +411,7 @@ form textarea::placeholder {
   .user-chat p {
     font-size: 15px;
   }
-  .loading {
-    margin-top: 122px;
-  }
+
   .center {
     margin-top: 0px;
     padding-top: 50px;

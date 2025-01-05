@@ -4,14 +4,14 @@ import Input from "../Components/Input";
 import { useState } from "react";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { use } from "react";
+
 const Fullpage = () => {
   const [inputs, setInputs] = useState({
     user: "",
     AI: "",
   });
   const [question, setQuestion] = useState("");
-
+  const [error, setError] = useState(false);
   const [display, setDisplay] = useState(false);
   const [previousChat, setPreviousChat] = useState([]);
   const handleOnchange = (e) => {
@@ -26,7 +26,7 @@ const Fullpage = () => {
     }
     return true;
   };
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmission = (e) => {
     e.preventDefault();
@@ -43,11 +43,11 @@ const Fullpage = () => {
     setInputs((prevInputs) => ({ ...prevInputs, user: "" }));
   };
 
-  // const [answer, setAnswer] = useState("");
   const handleText = async (id) => {
     // Correct the import to dynamically import the module
 
     try {
+      setLoading(true);
       const genAI = new GoogleGenerativeAI(
         "AIzaSyBEaaz7BzMHhaaA2gnpKReaOxIPnVFEWz4"
       );
@@ -63,8 +63,9 @@ const Fullpage = () => {
           index === prev.length - 1 ? { ...chat, AI: Ai } : chat
         )
       );
+      setLoading(false);
     } catch (err) {
-      console.log(err.message);
+      setError(true);
     }
   };
 
@@ -113,6 +114,8 @@ const Fullpage = () => {
         handleShow2={handleShow2}
         question={question}
         handleQuestion={handleQuestion}
+        loading={loading}
+        error={error}
       />
       <Input
         inputs={inputs}
