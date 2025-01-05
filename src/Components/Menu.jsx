@@ -1,7 +1,7 @@
 import { IoMdContact } from "react-icons/io";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { FaPenToSquare } from "react-icons/fa6";
-import { icon } from "leaflet";
+
 const Menu = ({ handleShow, handleShow2, iconshow }) => {
   return (
     <div
