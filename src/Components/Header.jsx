@@ -1,11 +1,7 @@
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Menu from "../Components/Menu";
-import { useState } from "react";
-const Header = ({ handleShow, handleShow2 }) => {
-  const [iconshow, setIconshow] = useState(false);
-  const handleIconShow = () => {
-    setIconshow((prev) => !prev);
-  };
+// import { useState } from "react";
+const Header = ({ handleShow, handleShow2, iconshow, handleIconShow }) => {
   return (
     <div className="heads">
       <div className="header">

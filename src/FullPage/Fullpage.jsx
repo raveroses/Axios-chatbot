@@ -67,21 +67,34 @@ const Fullpage = () => {
   console.log(previousChat);
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [iconshow, setIconshow] = useState(false);
   const handleShow = (e) => {
     e.preventDefault();
     setShow((prev) => !prev);
+    setIconshow(false);
   };
   const handleShow2 = (e) => {
     e.preventDefault();
     setShow2((prev) => !prev);
+    setIconshow(false);
     console.log("you clicked viewDetail");
   };
   console.log(show2);
   console.log(show);
 
+  const handleIconShow = () => {
+    setIconshow((prev) => !prev);
+  };
   return (
     <div className="mother">
-      <Header show={show} handleShow={handleShow} handleShow2={handleShow2} />
+      <Header
+        show={show}
+        handleShow={handleShow}
+        handleShow2={handleShow2}
+        show2={show2}
+        iconshow={iconshow}
+        handleIconShow={handleIconShow}
+      />
       <Body
         inputs={inputs}
         display={display}
