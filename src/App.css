@@ -151,7 +151,7 @@ form textarea::placeholder {
   align-self: flex-start;
   justify-content: flex-start;
   width: auto;
-  max-width: 70%;
+  max-width: 100%;
   padding-top: 20px;
 }
 .chatmother .user-text {

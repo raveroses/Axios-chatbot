@@ -27,7 +27,9 @@ const Chat = ({ display, previousChat, loading, error }) => {
                 className="loading"
                 style={{ display: loading ? "block" : "none" }}
               ></div>
-              <span> {chat?.AI}</span>
+              <span>
+                <Markdown>{chat.AI}</Markdown>
+              </span>
               <p>{error}</p>
             </div>
           </div>
