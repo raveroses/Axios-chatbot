@@ -1,5 +1,6 @@
 const Chat = ({ display, previousChat }) => {
   const chats = [...previousChat];
+  console.log(chats?.AI);
   console.log(chats);
   const map = chats.map((chat, index) => {
     return (
@@ -11,7 +12,7 @@ const Chat = ({ display, previousChat }) => {
         key={index}
       >
         <div className="user-text">
-          <p>{chat.user}</p>
+          <p>{chat?.user || chat.user2} </p>
         </div>
 
         <div className="ai-chat">
@@ -20,7 +21,7 @@ const Chat = ({ display, previousChat }) => {
             <img src="/images/axionis.jpg" alt="axionis" />
           </div>
           <div className="AI-text">
-            <p>{chat.AI}</p>
+            <p>{chat?.AI}</p>
           </div>
         </div>
       </div>

@@ -4,11 +4,13 @@ import Input from "../Components/Input";
 import { useState } from "react";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { use } from "react";
 const Fullpage = () => {
   const [inputs, setInputs] = useState({
     user: "",
-    AI: "hhh",
+    AI: "",
   });
+  const [question, setQuestion] = useState("");
 
   const [display, setDisplay] = useState(false);
   const [previousChat, setPreviousChat] = useState([]);
@@ -41,7 +43,8 @@ const Fullpage = () => {
     setInputs((prevInputs) => ({ ...prevInputs, user: "" }));
   };
 
-  const handleText = async () => {
+  // const [answer, setAnswer] = useState("");
+  const handleText = async (id) => {
     // Correct the import to dynamically import the module
 
     try {
@@ -50,10 +53,11 @@ const Fullpage = () => {
       );
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      const prompt = inputs.user;
-
+      const prompt = inputs.user || id;
+      console.log(prompt);
       const result = await model.generateContent(prompt);
       const Ai = result.response.text() || "No response from AI.";
+      console.log(Ai);
       setPreviousChat((prev) =>
         prev.map((chat, index) =>
           index === prev.length - 1 ? { ...chat, AI: Ai } : chat
@@ -64,7 +68,6 @@ const Fullpage = () => {
     }
   };
 
-  console.log(previousChat);
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [iconshow, setIconshow] = useState(false);
@@ -77,14 +80,19 @@ const Fullpage = () => {
     e.preventDefault();
     setShow2((prev) => !prev);
     setIconshow(false);
-    console.log("you clicked viewDetail");
   };
-  console.log(show2);
-  console.log(show);
 
   const handleIconShow = () => {
     setIconshow((prev) => !prev);
   };
+
+  const handleQuestion = (id) => {
+    setQuestion(id);
+    setDisplay(true);
+    handleText(id);
+    setPreviousChat((prev) => [...prev, { user2: id }]);
+  };
+
   return (
     <div className="mother">
       <Header
@@ -103,6 +111,8 @@ const Fullpage = () => {
         show2={show2}
         handleShow={handleShow}
         handleShow2={handleShow2}
+        question={question}
+        handleQuestion={handleQuestion}
       />
       <Input
         inputs={inputs}

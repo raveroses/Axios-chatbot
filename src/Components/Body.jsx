@@ -11,11 +11,19 @@ const Body = ({
   handleShow,
   handleShow2,
   show2,
+  question,
+  handleQuestion,
 }) => {
   const questions = Question.map((question, index) => {
     return (
-      <div className="real-question" key={index}>
-        {question.question}
+      <div
+        className="real-question"
+        key={index}
+        onClick={() => {
+          handleQuestion(question?.question);
+        }}
+      >
+        {question?.question}
       </div>
     );
   });
@@ -34,7 +42,12 @@ const Body = ({
           <div className="question">{questions}</div>
         </div>
       </div>
-      <Chat inputs={inputs} display={display} previousChat={previousChat} />
+      <Chat
+        inputs={inputs}
+        display={display}
+        previousChat={previousChat}
+        question={question}
+      />
       <Developer handleShow={handleShow} show={show} />
       <ViewDetail handleShow2={handleShow2} show2={show2} />
     </>
