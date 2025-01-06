@@ -423,7 +423,7 @@ form textarea::placeholder {
   .menus {
     width: 150px;
     gap: 0px;
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .developer {
     width: 93%;

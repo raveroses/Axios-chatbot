@@ -4,7 +4,10 @@ import { FaPenToSquare } from "react-icons/fa6";
 
 const Menu = ({ handleShow, handleShow2, iconshow }) => {
   return (
-    <div className="menus" style={{ display: iconshow ? "block" : "none" }}>
+    <div
+      className="menus"
+      style={{ visibility: iconshow ? "visible" : "hidden" }}
+    >
       <div className="mehn" onClick={handleShow}>
         <IoMdContact className="iccon" />
         Developer
