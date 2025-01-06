@@ -45,9 +45,8 @@ const Fullpage = () => {
 
   const handleText = async (id) => {
     // Correct the import to dynamically import the module
-
+    setLoading(true);
     try {
-      setLoading(true);
       const genAI = new GoogleGenerativeAI(
         "AIzaSyBEaaz7BzMHhaaA2gnpKReaOxIPnVFEWz4"
       );

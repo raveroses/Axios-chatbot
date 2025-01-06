@@ -124,6 +124,7 @@ form textarea::placeholder {
   background-color: gray;
   padding: 6px 10px;
   border: none;
+  cursor: pointer;
 }
 
 .body-image {
