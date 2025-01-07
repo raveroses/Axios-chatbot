@@ -35,7 +35,7 @@ const Fullpage = () => {
       setDisplay(true);
       setPreviousChat((prev) => [
         ...prev,
-        { user: inputs.user, AI: inputs.AI },
+        { user: inputs.user, AI: inputs.AI, loading: true },
       ]);
 
       handleText();
@@ -45,7 +45,7 @@ const Fullpage = () => {
 
   const handleText = async (id) => {
     // Correct the import to dynamically import the module
-    setLoading(true);
+
     try {
       const genAI = new GoogleGenerativeAI(
         "AIzaSyBEaaz7BzMHhaaA2gnpKReaOxIPnVFEWz4"
@@ -59,12 +59,18 @@ const Fullpage = () => {
       console.log(Ai);
       setPreviousChat((prev) =>
         prev.map((chat, index) =>
-          index === prev.length - 1 ? { ...chat, AI: Ai } : chat
+          index === prev.length - 1 ? { ...chat, AI: Ai, loading: false } : chat
         )
       );
-      setLoading(false);
     } catch (err) {
       setError(true);
+      setPreviousChat((prev) =>
+        prev.map((chat, index) =>
+          index === prev.length - 1
+            ? { ...chat, AI: "Hmm Something went wrong", loading: false }
+            : chat
+        )
+      );
     }
   };
 
@@ -93,6 +99,7 @@ const Fullpage = () => {
     setPreviousChat((prev) => [...prev, { user2: id }]);
   };
 
+  console.log(previousChat);
   return (
     <div className="mother">
       <Header

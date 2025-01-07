@@ -22,11 +22,8 @@ const Chat = ({ display, previousChat, loading, error }) => {
           </div>
           <div className="AI-text">
             <div>
-              {" "}
-              <div
-                className="loading"
-                style={{ display: loading ? "block" : "none" }}
-              ></div>
+              {chat.loading && <div className="loading"></div>}
+
               <span>
                 <Markdown>{chat.AI}</Markdown>
               </span>
