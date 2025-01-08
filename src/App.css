@@ -148,7 +148,7 @@ form textarea::placeholder {
   color: white;
   display: flex;
   gap: 10px;
-  align-items: center;
+  align-items: flex-start;
   align-self: flex-start;
   justify-content: flex-start;
   width: auto;
